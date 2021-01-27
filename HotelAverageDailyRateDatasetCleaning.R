@@ -134,7 +134,7 @@ hotel_bookings$meal
 ##################################################################################
 # Data Omitting
 # market_segment. Complementary and Undefined values
-
+# TEST
 
 ##################################################################################
 summary(hotel_bookings$market_segment)
