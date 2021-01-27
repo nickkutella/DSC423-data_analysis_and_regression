@@ -1,7 +1,7 @@
 # File to Clean data for Milestone 3
 
 ##################################################################################
-# New Variable: season 
+# New Variable: season
 # Description Seasons based on (https://www.calendardate.com/) in format (MM-DD-YYYY)
 ##################################################################################
 
@@ -12,16 +12,16 @@ winter2015End   <- as.Date("2015-03-20")
 # 2015 - Spring (03-20-2015) - (06-21-2015)
 spring2015Start <- as.Date("2015-03-20")
 spring2015End   <- as.Date("2015-06-21")
-      
+
 # 2015 - Summer (06-21-2015) - (09-23-2015)
 summer2015Start <- as.Date("2015-06-21")
 summer2015End   <- as.Date("2015-09-23")
-    
+
 # 2015 - Fall   (09-23-2015) - (12-22-2015)
 fall2015Start <- as.Date("2015-09-23")
 fall2015End   <- as.Date("2015-12-22")
 
-# 2016 - Winter (12-22-2015) - (03-20-2016) 
+# 2016 - Winter (12-22-2015) - (03-20-2016)
 winter2016Start <- as.Date("2015-12-22")
 winter2016End   <- as.Date("2016-03-20")
 
@@ -41,7 +41,7 @@ fall2016End  <- as.Date("2016-12-21")
 winter2017Start <- as.Date("2016-12-21")
 winter2017End   <- as.Date("2017-03-20")
 
-# 2017 - Spring (03-20-2017) - (06-21-2017) 
+# 2017 - Spring (03-20-2017) - (06-21-2017)
 spring2017Start <- as.Date("2017-03-20")
 spring2017End   <- as.Date("2017-06-21")
 
@@ -53,14 +53,14 @@ summer2017End   <- as.Date("2017-09-22")
 fall2017Start <- as.Date("2017-09-22")
 fall2017End   <- as.Date("2017-12-21")
 
-## convertDate(Date) returns the Season in which the Date falls falls based on the above variables
+# convertDate(Date) returns the Season in which the Date falls falls based on the above variables
 convertDateToSeason <- function(providedDate) {
   if((providedDate >= winter2015Start & providedDate <= winter2015End) | (providedDate >= winter2016Start & providedDate <= winter2016End) | (providedDate >= winter2017Start & providedDate <= winter2017End) ) {
     result <- 'winter'
-  } 
+  }
   else if((providedDate >= spring2015Start & providedDate <= spring2015End) | (providedDate >= spring2016Start & providedDate <= spring2016End) | (providedDate >= spring2017Start & providedDate <= spring2017End)  ){
     result <- 'spring'
-  } 
+  }
   else if((providedDate >= summer2015Start & providedDate <= summer2015End) | (providedDate >= summer2016Start & providedDate <= summer2016End) | (providedDate >= summer2017Start & providedDate <= summer2017End)) {
     result <- 'summer'
   }
@@ -121,7 +121,7 @@ hotel_bookings$reservedRoomAndAssignedRoomMatch
 # Combine SC and UNDEFINED as they are refer to the same value
 ################################################################################
 hotel_bookings$meal <- ifelse(hotel_bookings$meal == 'UNDEFINED', 'SC', hotel_bookings$meal)
-  
+
 # Validating the update
 #for(i in hotel_bookings$meal ) {
 #  if(i == 'UNDEFINED') {
